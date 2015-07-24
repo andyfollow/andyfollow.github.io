@@ -1,0 +1,89 @@
+=====
+Первое #сообщение
+
+Страным образом все случилось неожиданно.
+
+```
+function toHTMLLayout(txt){
+    txt = txt.replace(reP, '<p>$1</p>')
+    txt = txt.replace(reIMG, '<img src="$1" width=200>')
+    txt = txt.replace(reCODE, '<div class="code">$1</div>')
+    txt = txt.replace(reHASHTAG, '<span class="textonetag">$1</span>')
+    return txt
+}
+```
+Вот такая #функция преобразовывает #картинки, код, хэштэги в хтмл. Пока справляется.
+И для затравки:
+@http://pics.deejay.de/pics/xl/4/2/189042.jpg@
+@http://pics.deejay.de/pics/xl/4/5/189045.jpg@
+
+=====
+Calibre   - Shelflife 3
+
+
+#Calibre has gone through his hard drives, DAT tapes and even mini discs to find more gems for 'Shelflife 3'. Thirteen of his most
+requested unreleased productions from 1997 to 2013 are now released on #Vinyl, CD and Digital formats. Please note the vinyl format is pressed on 3X12' vinyl with the 13 track CD shrink wrapped. Mistajam 'Brilliant, brilliant, brilliant!' Doc Scott '10/10 Doesn't get better than this' TC '10/10 Need a moment to take this in! So Good!'Noisia 'Smooth as ever. Love it!'
+Recent Calibre live mix for Mixmag:
+
+#Beats #Drum&bass
+=====
+Mr Tophat & Art Alfie   - Pajala Sunrise Ep
+
+Tapping into the strong current of quality electronic music coming out of Sweden, the latest Bass Culture shines a light on two talents working out of the Stockholm underground who have created their own imprint on the European house and techno scene. The Pajala Sunrise E.P marks the first release that Mr Tophat and Art Alfie have issued away from their shared base camps of Junk Yard Connections and Karlovak, two labels that showcase the pair's commitment to pushing 4/4 dance music forwards wherever they can. Energy lies at the heart of the sound that Oscar and Rudolf (to give them their real names) conjure up, both in the urgent pulse of their full-bodied drum arrangements and the spiritual lilt of their melodic content. Take 'Pajala Sunrise', the A-side on this latest offering, which surges forth on an immersive kick and hat combo coloured with a deceptively funky bass lick. While this rugged exterior provides the momentum to the track, the esoteric keys and pads that come drifting in deliver the soul. With a peak populated with wayward sirens and sunkissed piano stabs, it's a club ready workout that speaks directly to both body and mind.Where the A-side is all joyous celebration, Ressle Restroom heads into moodier territory where percussion dominates the frequency range. It's a slow-burner, holding back on all the elements for as long as possible to truly draw the mind into a sparse soundscape populated by abstract vocal snippets and pumping locomotives of drums, inspired by the choppy funk of micro house but welded to a more weighty rhythmic framework. The deeper into the track you go, the more the sound world builds up around you, from crowd ambience to momentary diva croons, the track never peaking or troughing as much as constantly burrowing into your subconscious. For their first adventure away from their own highly-regarded labels, Mr Tophat and Art Alfie have demonstrated the skills that have brought them so much success on their own terms. Bass Culture is only too happy to help spread that talent even further afield.
+
+#House #Deep #Tech
+=====
+Pools   - Innertubes
+@http://pics.deejay.de/pics/l2/4/2/189042b.jpg@
+For their first ever double 12 Inch outing Razor-N-Tape presents POOLS, with a sun-drenched and laid-back collection of tunes called "Innertubes".
+
+POOLS, the moniker of Los Angeles duo Thee Mike Bee and DJ Morsecode, craft a sound that conjures up the easy going swagger and soulful grit of the left-most coast. 
+
+Disc 1 features original versions that read like an album, perfect for a lazy Sunday rooftop BBQ with beers, bros and blunts, (although no doubt some of these gems will find their way into DJs' warm-up and boom-bap sets). 
+
+Disc 2 elevate the juncture to dance floor level, with smooth and varied remixes from RNT stalwarts Luvless and DJ Vas, plus label newcomers thatmanmonkz and Junktion.
+
+A killer package for collectors & DJ's alike - Limited pressing so act fast!
+
+#House #DeepChicago#Funky#Slow
+=====
+Dlr - Seeing Sounds Album Part 1
+@http://pics.deejay.de/pics/l2/4/2/189042.jpg@
+
+* Following a string of successful label releases in a short period of time, DLR is ready to unleash his debut solo album on Dispatch Recordings, entitled 'Seeing Sounds'.
+* Having previously collaborated with Octane on the 'Method In The Madness' album, DLR has quickly established his own signature sound; an instantly recognizable groove mischievously poking through the mix, terrorizing dancefloors in a truly unique way. 
+
+
+* As an album concept, 'Seeing Sounds' is DLR's exploration into sound design and how the manipulation of organic elements and subtle soundscapes can create imagery within the music; to set the scene and immerse the listener up to a cinematic level.
+
+
+* Commencing this quest from abstract beginnings, DLR investigates over a selection of different formats and styles, ranging from the tantalizing neck snapper 'Charlie Brown' to sinister breakbeat nonchalance of 'I Found Out'. * Inviting external influences to the fold; specially selected guests join the project to explore further, including Total Science, creating the cataclysmic 'Control The Sound', Hydro, the ambient chords and emotive vocal sample in 'Empyreal' and partner in crime Break, resulting in the mighty, yet constrained 'Human Error'.
+
+* Since Resident Advisor's initial announcement, the album has had support from all corners, including Noisia, Friction (numerous Radio 1 plays), Goldie, Calyx & Teebee and The Upbeats, with Mixmag selecting it as their February 'Album of the Month'.
+
+
+* With an innate understanding of the technology available and a shrewd willingness to exploit it, 'Seeing Sounds' is the culmination of DLR's very best work to date.
+
+
+<audio src="http://www.deejay.de/streamit/0/4/174504a.mp3" controls preload></audio>
+=====
+Русский язык
+
+#русскийхэштэг Привет мир
+=====
+CODE
+
+```
+	        y = dict([[i[0],' '.join(i[1:])] for i in res.get('AAA',())])
+	        self.time =  y['time']
+	        self.date =  y['date']
+	        self.server_name =  y['host']
+	        self.interval =  y['interval']
+	        self.server_info = y```
+
+	        ```
+import datetime
+import numpy as np
+import pandas as pd
+import time
+```

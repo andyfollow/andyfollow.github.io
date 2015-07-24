@@ -1,1 +1,99 @@
-Hello World
+<html>	
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog</title>
+    <!-- Material Design Lite -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+	/* Контейнер с карточками */
+	div#container{
+		padding:.5em;
+		background-color: rgba(1,1,1,.1);
+		margin: 0 auto;
+
+	}
+	/* Карточка */
+	div.entrie{
+		background-color: white;
+		margin:1em;
+		display: block;
+		border: 1px solid rgba(0,0,0,.12);
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+		float: left;
+		width:30em;
+	}
+	/* Карточка при наведении */
+	div.entrie:hover{
+		border: 1px solid black;
+	}
+	/* Заголовок карточки */
+	div.title{
+		font-size: 2em;
+		display: block;
+		padding:1em;
+		background-color: rgba(0,125,33,.6); 
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+	}
+	/* Текст карточки */
+	div.text{
+		display: block;
+		padding: 1em;
+		white-space: normal;
+		font-family: sans-serif;
+	}	
+	/* Тэги в карточке */
+	div.tags{padding:.5em;}
+	/* Тэг */
+	div.onetag{display: inline}
+	/* Текст тэга */
+	span.textonetag{
+		cursor:pointer;
+		display: inline;
+		color: rgba(125,125,0,.5);
+	}
+	/* Блок с кодом */
+	div.code{
+		display: inline-block;
+		font-family: monospace;
+	}
+	/* Абзацы для блока с кодом */
+	div.code>p{
+		margin:0;
+	  display: block;
+	  padding:0;
+	  white-space: pre-wrap;
+	  -webkit-margin-before: 0px;
+	  -webkit-margin-after: 0px;
+	  -webkit-margin-start: 0px;
+	  -webkit-margin-end: 0px;
+	}
+	img{width:100%;}
+
+</style>
+<script id="en-list" type="text/template">
+{{entries}}<div class="entrie">
+	<div class="title">{{title}}</div>
+	<div class="text">{{text|f}}</div>
+	{{if tags|notempty}}
+	<div class="tags">
+		{{tags}}
+		<div class="onetag">{{.}}</div>
+		{{/tags}}
+	</div>
+	{{/if}}
+</div>{{/entries}}
+</script>
+
+<body>
+
+<div id="container"></div>
+
+</body>
+<script src="masonry.pkgd.min.js"></script>
+<script src="b.js"></script>
+<script src="markup.min.js"></script>
+
+</html>
