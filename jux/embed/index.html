@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>До и после</title>
+    <meta charset="utf-8">
+    <meta name="description" content="JuxtaposeJS Embed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <style>
+    html, body {
+      height:100%;
+      padding: 0px;
+      margin: 0px;
+    }
+    #juxtapose-embed { 
+      width: 50%;
+      max-width: initial;
+    }
+  </style>
+
+  <link rel="stylesheet" href="../css/juxtapose.css">
+
+</head>
+<body>
+  <div id="juxtapose-embed"></div>
+
+  <script type="text/javascript" src="../js/juxtapose.js"></script>
+  <script type="text/javascript">
+    function createJuxtapose(json) {
+      slider = new juxtapose.JXSlider('#juxtapose-embed',json.images,json.options);
+    }
+
+    json = {   
+    "images": [
+        {
+            "src": "../before.jpeg",
+            "label": "До",
+            //"credit": "Image Credit"
+        },
+        {
+            "src": "../after.jpeg",
+            "label": "Через 10 сеансов",
+            //"credit": "Image Credit"
+        }
+    ], 
+    "options": {
+        "animate": true,
+        "showLabels": true,
+        "showCredits": false,
+        "startingPosition": "85%",
+        "mode": "vertical"
+    }
+    
+}
+    createJuxtapose(json);
+
+  </script>
+
+</body>
+</html>
