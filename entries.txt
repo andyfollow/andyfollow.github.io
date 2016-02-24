@@ -1,4 +1,19 @@
 =====
+#Arduino nano pins
+
+@https://s-media-cache-ak0.pinimg.com/736x/98/c2/35/98c2357903172f108b40441806a2b31e.jpg@
+=====
+MIDI beat clock
+
+Добавил синхронизацию
+6 синхросигналов на 1/16
+
+0xFA - старт 
+0xF8 - сигнал синхронизации (clock)
+
+Важные ссылки:
+<a href="https://www.midi.org/specifications/item/table-1-summary-of-midi-message">Таблица структуры MIDI сообщений</a>
+=====
 Первое #сообщение
 
 Страным образом все случилось неожиданно.
