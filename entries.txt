@@ -1,4 +1,114 @@
 =====
+Grafana_influx_
+
+Part I. #Influx
+
+<a href="https://docs.influxdata.com/influxdb/v0.12/introduction/installation/">docs.influxdata.com/influxdb/v0.12/introduction/installation</a>
+
+For Debian users, you can add the InfluxData repository by using the following commands: curl -sL 
+```
+https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+source /etc/os-release
+test $VERSION_ID="7" && echo "deb https://repos.influxdata.com/debian wheezy stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+test $VERSION_ID="8" && echo "deb https://repos.influxdata.com/debian jessie stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+```
+And then to install and start the InfluxDB service: 
+```
+sudo apt-get update && sudo apt-get install influxdb
+sudo service influxdb start
+
+nano /etc/influxdb/influxdb.conf
+
+http://192.168.150.226:8083/
+create database "jmeter"
+create database "sar"
+```
+Part II. Grafana
+
+http://docs.grafana.org/installation/debian/
+```
+sudo nano /etc/apt/sources.list
+```
+Use the above line even if you are on Ubuntu or another Debian version. There is also a testing repository if you want beta or release candidates.
+```
+deb https://packagecloud.io/grafana/testing/debian/ wheezy main
+```
+Then add the Package Cloud key. This allows you to install signed packages.
+```
+curl https://packagecloud.io/gpg.key | sudo apt-key add -
+```
+Update your Apt repositories and install Grafana
+```
+sudo apt-get update
+sudo apt-get install grafana
+```
+
+Package details
+Installs binary to /usr/sbin/grafana-server
+Installs Init.d script to /etc/init.d/grafana-server
+Creates default file (environment vars) to /etc/default/grafana-server
+Installs configuration file to /etc/grafana/grafana.ini
+Installs systemd service (if systemd is available) name grafana-server.service
+The default configuration sets the log file at /var/log/grafana/grafana.log
+The default configuration specifies an sqlite3 db at /var/lib/grafana/grafana.db
+Start the server (init.d service)
+Start Grafana by running:
+```
+sudo service grafana-server start
+```
+
+http://192.168.150.226:3000/login
+admin/admin
+
+http://192.168.150.226:3000/datasources/new
+Type: influxdb
+URL: http://127.0.0.1:8086
+Access: proxy
+
+Part III. InfuxDB and Python
+
+Install, upgrade and uninstall InfluxDB-Python with these commands:
+
+```
+pip install influxdb
+pip install --upgrade influxdb
+pip uninstall influxdb
+```
+
+```from londas import pd
+
+def to_float(a):
+    try:
+        return float(a)
+    except:
+        return str(a)
+
+project = "spuemias"
+
+for sar in pd.read_comp_pickle(LOGS+CORE_NAME+".sar.pkl.zip"):
+    serv_name = sar.info.server_name.split('.mosgorzd')[0]
+    json_body = []
+    for row in sar.iterrows():
+        
+        for i in row[1].index:
+            #print i[0]
+            if str(sar[i].dtype) != 'float64':
+                continue
+            db_row = {}
+            db_row['time'] = (int(row[0])-3*3600)*1000000000
+            value = to_float(row[1][i])
+            if i[0] == i[1]:
+                db_row["measurement"] = i[0]
+                
+            else:
+                db_row["measurement"] = '.'.join(i)
+            db_row['fields'] = {"value":value}
+            db_row["tags"] = {"project":project,"server":serv_name}
+            json_body.append(db_row)
+    client.write_points(json_body)
+```
+
+=====
 #Arduino nano pins
 
 @https://s-media-cache-ak0.pinimg.com/736x/98/c2/35/98c2357903172f108b40441806a2b31e.jpg@
