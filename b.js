@@ -143,19 +143,6 @@ request.url = "entries.txt";
 request.success = function(txt){
     var entries = entriesFromTxt(txt);
     createDOMElementsFrom(entries);
-
-	var msnry = new Masonry( document.getElementById('container'), {
-	  //columnWidth: 600,
-	  isAnimated: false,
-	  itemSelector: '.entrie',
-	  //isFitWidth: true,
-	  //columnWidth:100,
-	  transitionDuration: 0,
-	  animationOptions: {
-    	duration: 0,
-    	queue: false,
-     }
-	})
 	};
 
 
